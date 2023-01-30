@@ -2,15 +2,13 @@
 
 namespace Project_7
 {
-    internal class Program
-    {
+    internal class Program : StartMenu
+    { 
 
         static void Main(string[] args)
         {
-            GameMap _map = new GameMap();
-            Player player = new Player();
-            Quadrillator quadrillator = new Quadrillator();
-            InventoryMenu inventory = new InventoryMenu();
+            StartMenu menu = new StartMenu();
+            menu.ShowMenu();
 
             inventory.ShowMenu();
 
