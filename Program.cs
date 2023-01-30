@@ -7,8 +7,20 @@ namespace Project_7
 
         static void Main(string[] args)
         {
+
             StartMenu menu = new StartMenu();
             menu.ShowMenu();
+
+            if(menu.StartFunction == false)
+            {
+
+            }
+
+            GameMap _map = new GameMap();
+            Player player = new Player();
+            Quadrillator quadrillator = new Quadrillator();
+            InventoryMenu inventory = new InventoryMenu();
+            
 
             inventory.ShowMenu();
 

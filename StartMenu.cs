@@ -8,17 +8,16 @@ namespace Project_7
 {
     public class StartMenu
     {
-        public void Init()
-        {
-            GameMap _map = new GameMap();
-            Player player = new Player();
-            Quadrillator quadrillator = new Quadrillator();
-            InventoryMenu inventory = new InventoryMenu();
-        }
+       public bool StartFunction = false;
 
         public void ShowMenu()
         {
 
+        }
+
+        public void Startchoice()
+        {
+            
         }
 
     }
