@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_7;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,30 @@ namespace Project_7
 {
     internal class InventoryMenu
     {
+        public ConsoleKey InventoryKey;
+        //bool InventoryFunction = false;
+       public bool OpenCloseInventory = false;
+
+        public InventoryMenu() {
+            InventoryKey = Console.ReadKey().Key;
+            switch (InventoryKey)
+            {
+                case ConsoleKey.E:
+
+                    if (OpenCloseInventory == false)
+                    {
+                        ShowMenu();
+                    }
+                    else if (OpenCloseInventory == true)
+                    {
+
+                    }
+
+                    break;
+
+            }
+        }
+
         public void ShowMenu()
         {
             Console.WriteLine("======================================");
@@ -30,7 +55,9 @@ namespace Project_7
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.Description);
             }
+            OpenCloseInventory = true;
         }
 
     }
 }
+
