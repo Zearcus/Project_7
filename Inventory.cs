@@ -11,17 +11,15 @@ namespace Project_7
 {
     public class Inventory
     {
-        public static List<ItemBase> Equipements = new List<ItemBase>()
+        public List<ItemBase> Equipements = new()
         {
-            Items.Get(Armor.Chestplate),
-            Items.Get(Weapon.LongSword),
+            Items.Instance[Armor.Chestplate],
+            Items.Instance[Weapon.LongSword],
         };
 
-        public static List<ItemBase> Backpack = new List<ItemBase>()
+        public List<ItemBase> Backpack = new List<ItemBase>()
         {
-            Items.Get(MedicalItem.Potion),
+            Items.Instance[MedicalItem.Potion],
         };
-
-
     }
 }

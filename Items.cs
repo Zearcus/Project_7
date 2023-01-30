@@ -10,7 +10,10 @@ namespace Project_7
 {
     public class Items
     {
-        public static readonly ImmutableDictionary<MedicalItem, Consumables> Medicals = new Dictionary<MedicalItem, Consumables>
+        private static readonly Lazy<Items> singleton = new Lazy<Items>(new Items());
+        public static Items Instance => singleton.Value;
+
+        public readonly Dictionary<MedicalItem, Consumables> Medicals = new()
         {
             {
                 MedicalItem.Potion,
@@ -22,10 +25,10 @@ namespace Project_7
                     Description = "Simple bandage to dress minor injuries."
                 }
             }
-        
-        }.ToImmutableDictionary();
 
-        public static readonly ImmutableDictionary<Weapon, Weapons> Weapons = new Dictionary<Weapon, Weapons>
+        };
+
+        public readonly Dictionary<Weapon, Weapons> Weapons = new()
         {
             {
                 Weapon.LongSword,
@@ -38,9 +41,9 @@ namespace Project_7
                     Description = "A long sword. Perfect for warriors."
                 }
             }
-        }.ToImmutableDictionary();
+        };
 
-        public static readonly ImmutableDictionary<Armor, Armors> Armors = new Dictionary<Armor, Armors>
+        public readonly Dictionary<Armor, Armors> Armors = new()
         {
             {
                 Armor.Chestplate,
@@ -52,26 +55,26 @@ namespace Project_7
                     Description = "A chestplate to protect you from deadly injuries."
                 }
             }
-        }.ToImmutableDictionary();
+        };
 
-        public static Consumables Get(MedicalItem key) => Medicals[key];
-        public static Weapons Get(Weapon key) => Weapons[key];
-        public static Armors Get(Armor key) => Armors[key];
+        public Consumables this[MedicalItem key] => Medicals[key];
+        public Weapons this[Weapon key] => Weapons[key];
+        public Armors this[Armor key] => Armors[key];
     }
     public class Weapons : ItemBase
     {
-        public float PhysicalDmg { get; set; }
-        public float Crit { get; set; }
+        public float PhysicalDmg { get; init; }
+        public float Crit { get; init; }
     }
 
     public class Armors : ItemBase
     {
-        public float PhysicalDef { get; set; }
+        public float PhysicalDef { get; init; }
     }
 
     public class Consumables : ItemBase
     {
-        public float Healing { get; set; }
+        public float Healing { get; init; }
     }
 
     public enum MedicalItem { Potion }
@@ -79,4 +82,3 @@ namespace Project_7
     public enum Armor { Chestplate }
 
 };
-
