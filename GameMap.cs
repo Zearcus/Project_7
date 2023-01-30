@@ -50,14 +50,9 @@ namespace Project_7
             _Testpos = Console.ReadKey().Key;
             Console.SetCursorPosition(0, 0);
 
-            for (int i =_Playerpos[0] - _posX[0]; i < _Playerpos[0] + _posX[1]; i++)
+            for (int i = _Playerpos[0] - _posX[0]; i < _Playerpos[0] + _posX[1]; i++)
             {
-                for (int j =_Playerpos[1] - _posY[0]; j < _Playerpos[1] + _posY[1]; j++)
-=======
-            for (int i = 0; i < _Map.GetLength(0) / 2 ; i++)
-            {
-                for (int j = 0 ; j < _Map.GetLength(1) / 2; j++)
-
+                for (int j = _Playerpos[1] - _posY[0]; j < _Playerpos[1] + _posY[1]; j++)
                 {
                     //bordure de map 
                     if (_Playerpos[0] <= _posX[0])
@@ -145,3 +140,4 @@ namespace Project_7
         }
     }
 }
+

@@ -25,7 +25,7 @@ namespace Project_7
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.Description);
             }
-=======
+
             GameMap _map = new GameMap();
             Player player = new Player();
             Quadrillator quadrillator = new Quadrillator();
@@ -38,11 +38,6 @@ namespace Project_7
                 _map.show(player._Playerpos);
                 player.keypressed();
             } while(true);
-=======
-            {
-                //player.keypressed();
-                _map.show();
-            } while (true);
 
 
 
