@@ -31,11 +31,19 @@ namespace Project_7
             Quadrillator quadrillator = new Quadrillator();
 
             _map.Init();
+            player.Init();
             do
+
+            {   
+                _map.show(player._Playerpos);
+                player.keypressed();
+            } while(true);
+=======
             {
                 //player.keypressed();
                 _map.show();
             } while (true);
+
 
 
         }
