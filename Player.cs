@@ -6,7 +6,6 @@ namespace Project_7
     internal class Player : Entities
     {
 
-        
         public int[] _Playerpos { get; set; }
         public void Init()
         {
@@ -16,29 +15,41 @@ namespace Project_7
 
         }
 
-        public void keypressed()
+        public ConsoleKey keypressed(GameMap map)
         {
 
             ConsoleKey _Player;
-            _Player = Console.ReadKey().Key;
+            _Player = Console.ReadKey(true).Key;
             switch (_Player)
             {
                 case ConsoleKey.Q:
-                    _Playerpos[1]--;
+                    if (map.GetMap()[_Playerpos[0], _Playerpos[1] - 1] != 'X')
+                    {
+                        _Playerpos[1]--;
+                    }
                     break;
                 case ConsoleKey.D:
-                    _Playerpos[1]++;
+                    if (map.GetMap()[_Playerpos[0], _Playerpos[1] + 1] != 'X')
+                    {
+                        _Playerpos[1]++;
+                    }
                     break;
                 case ConsoleKey.S:
-                    _Playerpos[0]++;
+                    if (map.GetMap()[_Playerpos[0] + 1, _Playerpos[1]] != 'X')
+                    {
+                        _Playerpos[0]++;
+                    }
                     break;
                 case ConsoleKey.Z:
-                    _Playerpos[0]--;
+                    if (map.GetMap()[_Playerpos[0] - 1, _Playerpos[1]] != 'X')
+                    {
+                        _Playerpos[0]--;
+                    }
                     break;
                 default:
                     break;
             }
+            return _Player;
         }
     }
 }
-    
