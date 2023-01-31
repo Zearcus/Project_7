@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,10 @@ namespace Project_7
     class GameMap
     {
         char[,] _Map;
+        public char[,] GetMap()
+        {
+            return _Map;
+        }
         public int[] _posX { get; set; }
         public int[] _posY { get; set; }
 
@@ -44,12 +49,9 @@ namespace Project_7
             x = 0;
         }
 
-        public void show(int[] _Playerpos)
+        public void show(int[] _Playerpos, ConsoleKey input)
         {
-            ConsoleKey _Testpos;
-            _Testpos = Console.ReadKey().Key;
             Console.SetCursorPosition(0, 0);
-
             for (int i = _Playerpos[0] - _posX[0]; i < _Playerpos[0] + _posX[1]; i++)
             {
                 for (int j = _Playerpos[1] - _posY[0]; j < _Playerpos[1] + _posY[1]; j++)
@@ -78,23 +80,23 @@ namespace Project_7
                         _posY[0]++;
                     }
                     //inversement retour au milieu de map
-                    if (_Testpos == ConsoleKey.S && _posX[0] < 16)
+                    if (input == ConsoleKey.S && _posX[0] < 16)
                     {
                         _posX[0]++;
                         _posX[1]--;
                     }
-                    else if (_Testpos == ConsoleKey.Z && _posX[2] > 44)
+                    else if (input == ConsoleKey.Z && _posX[2] > 44)
                     {
                         _posX[1]++;
                         _posX[2]--;
                         _posX[0]--;
                     }
-                    else if (_Testpos == ConsoleKey.D && _posY[0] < 60)
+                    else if (input == ConsoleKey.D && _posY[0] < 60)
                     {
                         _posY[0]++;
                         _posY[1]--;
                     }
-                    else if (_Testpos == ConsoleKey.Q && _posY[2] > 179)
+                    else if (input == ConsoleKey.Q && _posY[2] > 179)
                     {
                         _posY[1]++;
                         _posY[2]--;
@@ -140,4 +142,3 @@ namespace Project_7
         }
     }
 }
-

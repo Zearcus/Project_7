@@ -25,8 +25,7 @@ namespace Project_7
 
                 _map.Init();
                 player.Init();
-                do
-
+                while (true)
                 {
                     _map.show(player._Playerpos);
                     if(inventory.OpenCloseInventory == false)
@@ -35,6 +34,9 @@ namespace Project_7
                     }
                     player.keypressed();
                 } while (true);
+                    ConsoleKey input = player.keypressed(_map);
+                    _map.show(player._Playerpos, input);
+                };
             }
 
         }
