@@ -10,15 +10,6 @@ namespace Project_7
 {
     internal class InventoryMenu
     {
-        public ConsoleKey InventoryKey;
-        //bool InventoryFunction = false;
-        public bool OpenCloseInventory = false;
-
-        public InventoryMenu()
-        {
-            InventoryKeyCode();
-        }
-
         public void ShowMenu()
         {
             Console.WriteLine("======================================");
@@ -40,37 +31,6 @@ namespace Project_7
             {
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.Description);
-            }
-            OpenCloseInventory = true;
-        }
-
-        public void InventoryKeyCode()
-        {
-            InventoryKey = Console.ReadKey().Key;
-            //switch (InventoryKey)
-            //{
-            //    case ConsoleKey.E:
-
-            //        if (OpenCloseInventory == false)
-            //        {
-            //            ShowMenu();
-            //        }
-            //        else if (OpenCloseInventory == true)
-            //        {
-
-            //        }
-            //        break;
-            //}
-
-
-            if (InventoryKey == ConsoleKey.E && OpenCloseInventory == false)
-            {
-                Console.Clear();
-                ShowMenu();
-
-                if(InventoryKey == ConsoleKey.E && OpenCloseInventory == true) {
-                    OpenCloseInventory= false;
-                }
             }
         }
     }

@@ -14,23 +14,22 @@ namespace Project_7
             if(menu.StartBool == true)
             {
                 Console.WriteLine("Welcome dear traveller");
-                InventoryMenu inventory = new InventoryMenu();
+                Console.WriteLine("Press Escape to open the menu");
+                
+                
                 GameMap _map = new GameMap();
                 Player player = new Player();
-                Quadrillator quadrillator = new Quadrillator();
-               
-
-                //Console.WriteLine("Press E to open the inventory");
-                
+                PauseMenu pause = new PauseMenu();
+                //Quadrillator quadrillator = new Quadrillator();
 
                 _map.Init();
                 player.Init();
                 while (true)
                 {
                     
-                    if(inventory.OpenCloseInventory == false)
+                    if(pause.OpenClosePause == false)
                     {
-                        inventory.InventoryKeyCode();
+                        pause.PauseKeyCode();
                     }
                     ConsoleKey input = player.keypressed(_map);
                     _map.show(player._Playerpos, input);
