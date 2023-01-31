@@ -27,16 +27,14 @@ namespace Project_7
                 player.Init();
                 while (true)
                 {
-                    _map.show(player._Playerpos);
+                    
                     if(inventory.OpenCloseInventory == false)
                     {
                         inventory.InventoryKeyCode();
                     }
-                    player.keypressed();
-                } while (true);
                     ConsoleKey input = player.keypressed(_map);
                     _map.show(player._Playerpos, input);
-                };
+                }
             }
 
         }
