@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,26 +12,11 @@ namespace Project_7
     {
         public ConsoleKey InventoryKey;
         //bool InventoryFunction = false;
-       public bool OpenCloseInventory = false;
+        public bool OpenCloseInventory = false;
 
-        public InventoryMenu() {
-            InventoryKey = Console.ReadKey().Key;
-            switch (InventoryKey)
-            {
-                case ConsoleKey.E:
-
-                    if (OpenCloseInventory == false)
-                    {
-                        ShowMenu();
-                    }
-                    else if (OpenCloseInventory == true)
-                    {
-
-                    }
-
-                    break;
-
-            }
+        public InventoryMenu()
+        {
+            InventoryKeyCode();
         }
 
         public void ShowMenu()
@@ -58,6 +44,35 @@ namespace Project_7
             OpenCloseInventory = true;
         }
 
+        public void InventoryKeyCode()
+        {
+            InventoryKey = Console.ReadKey().Key;
+            //switch (InventoryKey)
+            //{
+            //    case ConsoleKey.E:
+
+            //        if (OpenCloseInventory == false)
+            //        {
+            //            ShowMenu();
+            //        }
+            //        else if (OpenCloseInventory == true)
+            //        {
+
+            //        }
+            //        break;
+            //}
+
+
+            if (InventoryKey == ConsoleKey.E && OpenCloseInventory == false)
+            {
+                Console.Clear();
+                ShowMenu();
+
+                if(InventoryKey == ConsoleKey.E && OpenCloseInventory == true) {
+                    OpenCloseInventory= false;
+                }
+            }
+        }
     }
 }
 

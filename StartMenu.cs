@@ -29,6 +29,7 @@ namespace Project_7
                 {
                     case ConsoleKey.D1:
                         StartBool = true;
+                        Console.Clear();
                         break;
                     case ConsoleKey.D2:
                         Environment.Exit(0);

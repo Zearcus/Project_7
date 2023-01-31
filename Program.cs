@@ -13,12 +13,14 @@ namespace Project_7
 
             if(menu.StartBool == true)
             {
+                Console.WriteLine("Welcome dear traveller");
+                InventoryMenu inventory = new InventoryMenu();
                 GameMap _map = new GameMap();
                 Player player = new Player();
                 Quadrillator quadrillator = new Quadrillator();
-                InventoryMenu inventory = new InventoryMenu();
+               
 
-                Console.WriteLine("Press E to open the inventory");
+                //Console.WriteLine("Press E to open the inventory");
                 
 
                 _map.Init();
@@ -27,6 +29,10 @@ namespace Project_7
 
                 {
                     _map.show(player._Playerpos);
+                    if(inventory.OpenCloseInventory == false)
+                    {
+                        inventory.InventoryKeyCode();
+                    }
                     player.keypressed();
                 } while (true);
             }
