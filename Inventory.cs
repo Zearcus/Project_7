@@ -1,4 +1,4 @@
-﻿using Project_7;
+﻿/*using Project_7;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,17 +11,17 @@ namespace Project_7
 {
     public class Inventory
     {
-        public static List<ItemBase> Equipements = new()
+        public static List<ItemBase> _Equipements = new()
         {
             Items.Instance[Armor.Chestplate],
             Items.Instance[Weapon.LongSword],
         };
 
-        public static List<ItemBase> Backpack = new List<ItemBase>()
+        public static List<ItemBase> _Backpack = new List<ItemBase>()
         {
             Items.Instance[MedicalItem.Potion],
         };
 
 
     }
-}
+}*/

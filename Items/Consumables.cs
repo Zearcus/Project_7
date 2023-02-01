@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Project_7
 {
-    internal class ennemi
+    public class Consumables
     {
+        int _heal { get; set; }
+
+        public Consumables(int Healing) 
+        { 
+            _heal = Healing;
+        }
     }
 }

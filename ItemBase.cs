@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 
 namespace Project_7
 {
@@ -9,4 +9,4 @@ namespace Project_7
         public float Value { get; set; }
        
     }
-}
+}*/

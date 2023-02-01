@@ -6,6 +6,17 @@ namespace Project_7
     internal class Player : Entities
     {
 
+
+
+        public Player() 
+        {
+            CurrentHp = 20;
+            MaxHp = 20;
+            CurrentMp = 20;
+            Level = 1;
+            Strenght = 5;
+        }
+
         public int[] _Playerpos { get; set; }
         public void Init()
         {
@@ -14,6 +25,7 @@ namespace Project_7
             _Playerpos[1] = 63;
 
         }
+        
 
         public ConsoleKey keypressed(GameMap map)
         {

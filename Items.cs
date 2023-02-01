@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.ComponentModel;
@@ -10,8 +10,8 @@ namespace Project_7
 {
     public class Items
     {
-        private static readonly Lazy<Items> singleton = new Lazy<Items>(new Items());
-        public static Items Instance => singleton.Value;
+        private static readonly Lazy<Items> _singleton = new Lazy<Items>(new Items());
+        public static Items Instance => _singleton.Value;
 
         public readonly Dictionary<MedicalItem, Consumables> Medicals = new()
         {
@@ -81,4 +81,4 @@ namespace Project_7
     public enum Weapon { LongSword }
     public enum Armor { Chestplate }
 
-};
+};*/

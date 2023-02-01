@@ -14,7 +14,9 @@ namespace Project_7
             if(menu.StartBool == true)
             {
                 Console.WriteLine("Welcome dear traveller");
-                InventoryMenu inventory = new InventoryMenu();
+                Console.WriteLine("Press Escape to open the menu");
+                
+                
                 GameMap _map = new GameMap();
                 Player player = new Player();
                 Quadrillator quadrillator = new Quadrillator();
@@ -23,6 +25,8 @@ namespace Project_7
 
                 //Console.WriteLine("Press E to open the inventory");
                 
+                PauseMenu pause = new PauseMenu();
+                //Quadrillator quadrillator = new Quadrillator();
 
                 _map.Init();
                 player.Init();
@@ -30,6 +34,11 @@ namespace Project_7
                 while (true)
                 {
 
+                    
+                    if(pause.OpenClosePause == false)
+                    {
+                        pause.PauseKeyCode();
+                    }
                     ConsoleKey input = player.keypressed(_map);
                     _map.show(player._Playerpos, input);
 
@@ -39,6 +48,9 @@ namespace Project_7
                     }
                 }
             }
+            Battle battle = new Battle();
+            battle.BattleScene();
+
 
         }
     }
