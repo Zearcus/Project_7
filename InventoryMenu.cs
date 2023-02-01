@@ -1,4 +1,4 @@
-﻿using Project_7;
+﻿/*using Project_7;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace Project_7
 
         public InventoryMenu()
         {/*
-            InventoryKeyCode();*/
+            InventoryKeyCode();
         }
 
         public void ShowMenu()
@@ -73,5 +73,5 @@ namespace Project_7
             }
         }
     }
-}
+}*/
 

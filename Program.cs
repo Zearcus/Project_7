@@ -41,11 +41,6 @@ namespace Project_7
                     }
                     ConsoleKey input = player.keypressed(_map);
                     _map.show(player._Playerpos, input);
-
-                    if (inventory.OpenCloseInventory == false)
-                    {
-                        inventory.InventoryKeyCode(input);
-                    }
                 }
             }
             Battle battle = new Battle();
