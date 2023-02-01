@@ -15,22 +15,21 @@ namespace Project_7
         public static List<Skills> SkillList;
         Player p = new Player();
         Enemies e = new Enemies();
-        Random RNG = new Random();
+        public Random RNG = new Random();
+        public int index = 0;
         public Battle() 
         {
             
         }
         
         public void BattleScene () 
-        {
+        {    
             Actions = new List<Actions>
             {
                 new Actions("Attack", ()=>Attack()),
-                new Actions("Skills", ()=>Skills()),
+                new Actions("Skills", ()=>Attack()),
                 new Actions("Items", ()=>UseItems()),
             };
-
-            int index = 0;
 
             WriteMenu(Actions, Actions[index]);
 
@@ -70,11 +69,14 @@ namespace Project_7
 
         public void Attack ()
         {
-            int index = 0;
-            e.CurrentHp -= RNG.Next(p.Strenght,p.Strenght + 3);
-            Console.WriteLine("You dealt" + RNG.Next(p.Strenght, p.Strenght + 3) + "to the enemy");
+            int _RNG = RNG.Next(p.Strenght, p.Strenght + 3);
+
+            e.CurrentHp -= _RNG;
+            Console.WriteLine("You dealt " + _RNG + " to the enemy.");
             System.Threading.Thread.Sleep(1000);
             WriteMenu(Actions, Actions[index]);
+            TakeTurn();
+            
         }
 
         public void Skills () 
@@ -84,11 +86,40 @@ namespace Project_7
 
         public void UseItems ()
         {
-            
+            ConsumablesInit.ConsumablesList["Potion"].Heal(10,p);
+            System.Threading.Thread.Sleep(1000);
+            WriteMenu(Actions, Actions[index]);
         }
         public void TakeTurn ()
         {
+            int _RNGE = RNG.Next(e.Strenght, e.Strenght + 3);
 
+            if (e.CurrentHp <= 0)
+            {
+                e.CurrentHp = 0;
+            }
+            else if (e.CurrentHp > 0)
+            {
+                p.CurrentHp -= _RNGE;
+                Console.WriteLine("The enemy dealt " + _RNGE + " to you.");
+                System.Threading.Thread.Sleep(1000);
+                WriteMenu(Actions, Actions[index]);
+            }
+        }
+
+        public void Victory () 
+        { 
+            if (e.CurrentHp == 0)
+            {
+                Console.WriteLine("You won the battle !");
+                Console.WriteLine("You won " + e.Exp + " !");
+
+                if (p.Exp >= p.LVL2)
+                {
+                    Console.WriteLine("You leveled up !");
+                    Console.WriteLine("Strengt + 1");
+                }
+            }
         }
 
         void WriteMenu(List<Actions> actions, Actions selectedOption)
@@ -117,17 +148,25 @@ namespace Project_7
             }
         }
 
-        void WriteSkills(List<Actions> actions, Actions selected)
+        /*void WriteSkills(List<Skills> skilllist, Actions selected)
         {
             Console.Clear();
 
             Console.WriteLine("======================================");
             Console.WriteLine("                  Skills");
-            foreach (Actions action in actions)
+            foreach (Skills skill in skilllist)
             {
+                if (skill == selected)
+                {
+                    Console.Write("> ");
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
 
+                Console.WriteLine(skill.Name);
             }
-            
-        }
+        }*/
     }
 }

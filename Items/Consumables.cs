@@ -14,5 +14,14 @@ namespace Project_7
         { 
             _heal = Healing;
         }
+        public void Heal (int Healing, Player p)
+        {
+            p.CurrentHp += Healing;
+            Console.WriteLine("You got healed for " + Healing + ".");
+            if (p.CurrentHp >= p.MaxHp) 
+            { 
+                p.CurrentHp = p.MaxHp;
+            }
+        }
     }
 }

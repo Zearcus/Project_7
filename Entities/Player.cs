@@ -3,20 +3,20 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Project_7
 {
-    internal class Player : Entities
+    public class Player : Entities
     {
-<<<<<<< Updated upstream:Player.cs
 
-=======
         public Player() 
         {
-            CurrentHp = 20;
+            CurrentHp = 10;
             MaxHp = 20;
             CurrentMp = 20;
+            MaxMp = 20;
+            Exp = 0;
+            Speed = 5;
             Level = 1;
             Strenght = 5;
         }
->>>>>>> Stashed changes:Entities/Player.cs
         public int[] _Playerpos { get; set; }
         public void Init()
         {

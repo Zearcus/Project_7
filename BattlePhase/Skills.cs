@@ -16,5 +16,10 @@ namespace Project_7
             _Dmg = dmg;
             _MpCost = cost;
         }
+
+        public void Skill(int dmg, int cost)
+        {
+
+        }
     }
 }

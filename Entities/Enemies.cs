@@ -11,7 +11,11 @@ namespace Project_7
         public Enemies() 
         {
             CurrentHp = 20;
+            MaxHp = 20;
             CurrentMp = 20;
+            MaxMp = 20;
+            Exp = 10;
+            Speed = 3;
             Level = 1;
             Strenght = 5;
         }   
