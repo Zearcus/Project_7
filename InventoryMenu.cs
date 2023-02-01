@@ -1,4 +1,4 @@
-﻿/*using Project_7;
+﻿using Project_7;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,36 +15,28 @@ namespace Project_7
         public bool OpenCloseInventory = false;
 
         public InventoryMenu()
-        {/*
-            InventoryKeyCode();
+        {
+            //InventoryKeyCode();
         }
 
         public void ShowMenu()
         {
             Console.WriteLine("======================================");
             Console.WriteLine("Equipements : \n");
-            foreach (ItemBase item in Inventory.Equipements)
-            {
-                if (item != null)
-                {
-                    Console.WriteLine(item.Name);
-                }
-                else
-                {
-                    Console.WriteLine("Nothing");
-                }
-            }
+
+            Console.WriteLine(WeaponInit.WeaponsList["Glaive"]);
+
             Console.WriteLine("======================================");
             Console.WriteLine("\nItems in backpack : \n");
-            foreach (ItemBase item in Inventory.Backpack)
-            {
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.Description);
-            }
+            //foreach (ItemBase item in Inventory.Backpack)
+            //{
+            //    Console.WriteLine(item.Name);
+            //    Console.WriteLine(item.Description);
+            //}
             OpenCloseInventory = true;
         }
 
-        public void InventoryKeyCode(ConsoleKey input)
+        public void InventoryKeyCode()
         {
             //switch (InventoryKey)
             //{
@@ -62,16 +54,17 @@ namespace Project_7
             //}
 
 
-            if (input == ConsoleKey.E && OpenCloseInventory == false)
-            {
-                Console.Clear();
-                ShowMenu();
+            //if (InventoryKey == ConsoleKey.E && OpenCloseInventory == false)
+            //{
+            //    Console.Clear();
+            //    ShowMenu();
 
-                if(input == ConsoleKey.Escape && OpenCloseInventory == true) {
-                    OpenCloseInventory= false;
-                } 
-            }
+            //    if (InventoryKey == ConsoleKey.Escape && OpenCloseInventory == true)
+            //    {
+            //        OpenCloseInventory = false;
+            //    }
+            //}
         }
     }
-}*/
+}
 
