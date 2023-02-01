@@ -35,7 +35,7 @@ namespace Project_7
             _Map = new char[60, 240];
             int x = 0;
             int y = 0;
-            string[] lines = System.IO.File.ReadAllLines(@"../../../maptest.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"../../../maptestV2.txt");
             foreach (string line in lines)
             {
                 x++;
@@ -120,6 +120,10 @@ namespace Project_7
                         case ' ':
                             Console.BackgroundColor = ConsoleColor.White;
                             Console.ForegroundColor = ConsoleColor.White;
+                            break;
+                        case 'W':
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green;
                             break;
                         default:
                             break;

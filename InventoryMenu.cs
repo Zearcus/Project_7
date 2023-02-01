@@ -15,8 +15,8 @@ namespace Project_7
         public bool OpenCloseInventory = false;
 
         public InventoryMenu()
-        {
-            InventoryKeyCode();
+        {/*
+            InventoryKeyCode();*/
         }
 
         public void ShowMenu()
@@ -44,9 +44,8 @@ namespace Project_7
             OpenCloseInventory = true;
         }
 
-        public void InventoryKeyCode()
+        public void InventoryKeyCode(ConsoleKey input)
         {
-            InventoryKey = Console.ReadKey().Key;
             //switch (InventoryKey)
             //{
             //    case ConsoleKey.E:
@@ -63,14 +62,14 @@ namespace Project_7
             //}
 
 
-            if (InventoryKey == ConsoleKey.E && OpenCloseInventory == false)
+            if (input == ConsoleKey.E && OpenCloseInventory == false)
             {
                 Console.Clear();
                 ShowMenu();
 
-                if(InventoryKey == ConsoleKey.E && OpenCloseInventory == true) {
+                if(input == ConsoleKey.Escape && OpenCloseInventory == true) {
                     OpenCloseInventory= false;
-                }
+                } 
             }
         }
     }
