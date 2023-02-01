@@ -8,7 +8,7 @@ namespace Project_7
         static void Main(string[] args)
         {
 
-            /*StartMenu menu = new StartMenu();
+            StartMenu menu = new StartMenu();
             
 
             if(menu.StartBool == true)
@@ -19,11 +19,18 @@ namespace Project_7
                 
                 GameMap _map = new GameMap();
                 Player player = new Player();
+                Quadrillator quadrillator = new Quadrillator();
+                NPC npc = new NPC();
+               
+
+                //Console.WriteLine("Press E to open the inventory");
+                
                 PauseMenu pause = new PauseMenu();
                 //Quadrillator quadrillator = new Quadrillator();
 
                 _map.Init();
                 player.Init();
+                npc.Init();
                 while (true)
                 {
                     

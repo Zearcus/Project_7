@@ -21,8 +21,9 @@ namespace Project_7
         public void Init()
         {
             _Playerpos = new int[2];
-            _Playerpos[0] = 15;
-            _Playerpos[1] = 60;
+            _Playerpos[0] = 21;
+            _Playerpos[1] = 63;
+
         }
         
 
@@ -34,7 +35,7 @@ namespace Project_7
             switch (_Player)
             {
                 case ConsoleKey.Q:
-                    if (map.GetMap()[_Playerpos[0], _Playerpos[1] - 1] != 'X')
+                    if (map.GetMap()[_Playerpos[0], _Playerpos[1] - 1] != 'X' || map.GetMap()[_Playerpos[0], _Playerpos[1] - 1] != '#')
                     {
                         _Playerpos[1]--;
                     }
