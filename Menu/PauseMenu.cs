@@ -28,7 +28,6 @@ namespace Project_7
             //PauseKey = Console.ReadKey().Key;
             ConsoleKeyInfo PauseKey;
             PauseKey = Console.ReadKey();
-            Console.WriteLine("bonjour");
 
             // Open and Close Pause menu
             if (PauseKey.Key == ConsoleKey.Escape && OpenClosePause == false)
