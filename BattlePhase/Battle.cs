@@ -18,6 +18,7 @@ namespace Project_7
         Enemies e = new Enemies();
         public Random RNG = new Random();
         public int index = 0;
+        public int Pot = 3;
         public Battle() 
         {
             
@@ -37,7 +38,7 @@ namespace Project_7
             ConsoleKeyInfo keyInfo;
             do
             {
-                keyInfo = Console.ReadKey();
+                keyInfo = Console.ReadKey(true);
                 
                 if (keyInfo.Key == ConsoleKey.S)
                 {
@@ -94,7 +95,7 @@ namespace Project_7
             ConsoleKeyInfo keyInfo;
             do
             {
-                keyInfo = Console.ReadKey();
+                keyInfo = Console.ReadKey(true);
 
                 if (keyInfo.Key == ConsoleKey.S)
                 {
@@ -116,6 +117,7 @@ namespace Project_7
                 {
                     SkillList[index].Selected.Invoke();
                     index = 0;
+                    WriteMenu(Actions, Actions[index]);
                 }
             }
             while (keyInfo.Key != ConsoleKey.X);
@@ -126,7 +128,6 @@ namespace Project_7
 
         public void Potion ()
         {
-            int Pot = 3;
             
             if (Pot > 0)
             {
@@ -139,6 +140,7 @@ namespace Project_7
             else
             {
                 Console.WriteLine("You don't have anymore potions");
+                WriteMenu(Actions, Actions[index]);
             }
 
         }

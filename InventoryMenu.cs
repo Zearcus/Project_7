@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project_7
 {
-    internal class InventoryMenu
+    public class InventoryMenu
     {
         public ConsoleKey InventoryKey;
         //bool InventoryFunction = false;
@@ -24,7 +24,7 @@ namespace Project_7
             Console.WriteLine("======================================");
             Console.WriteLine("Equipements : \n");
 
-            Console.WriteLine(WeaponInit.WeaponsList["Glaive"]);
+            Console.WriteLine(WeaponInit.WeaponsList["Glaive"]._dmg) ;
 
             Console.WriteLine("======================================");
             Console.WriteLine("\nItems in backpack : \n");

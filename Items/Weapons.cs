@@ -8,7 +8,7 @@ namespace Project_7
 {
     public class Weapons
     {
-        int _dmg { get; set; }
+        public int _dmg { get; set; }
 
         public Weapons(int dmg)
         {
