@@ -36,7 +36,7 @@ namespace Project_7
                 OpenClosePause = true;
 
             }
-            else if (PauseKey.Key == ConsoleKey.M && OpenClosePause == true)
+            else if (PauseKey.Key == ConsoleKey.Escape && OpenClosePause == true)
             {
                 OpenClosePause = false;
                 Console.Clear();

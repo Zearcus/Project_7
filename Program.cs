@@ -8,7 +8,7 @@ namespace Project_7
         static void Main(string[] args)
         {
 
-            /*StartMenu menu = new StartMenu();
+            StartMenu menu = new StartMenu();
             
 
             if(menu.StartBool == true)
@@ -24,6 +24,7 @@ namespace Project_7
 
                 
                 PauseMenu pause = new PauseMenu();
+                Battle battle = new Battle();
 
                 _map.Init();
                 player.Init();
@@ -37,16 +38,16 @@ namespace Project_7
                         {
                             pause.ShowPause();
                             pause.PauseKeyCode(_map,player._Playerpos);
-                            
                         }
                     }
                     ConsoleKey input = player.keypressed(_map);
                     _map.show(player._Playerpos, input);
                 }
-            }*/
+                
+                //battle.BattleScene();
+            }
                    
-            Battle battle = new Battle();
-            battle.BattleScene();
+
 
         }
     }
