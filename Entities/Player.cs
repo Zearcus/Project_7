@@ -5,15 +5,26 @@ namespace Project_7
 {
     internal class Player : Entities
     {
+<<<<<<< Updated upstream:Player.cs
 
+=======
+        public Player() 
+        {
+            CurrentHp = 20;
+            MaxHp = 20;
+            CurrentMp = 20;
+            Level = 1;
+            Strenght = 5;
+        }
+>>>>>>> Stashed changes:Entities/Player.cs
         public int[] _Playerpos { get; set; }
         public void Init()
         {
             _Playerpos = new int[2];
             _Playerpos[0] = 15;
             _Playerpos[1] = 60;
-
         }
+        
 
         public ConsoleKey keypressed(GameMap map)
         {

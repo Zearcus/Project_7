@@ -1,4 +1,4 @@
-﻿using Project_7;
+﻿/*using Project_7;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace Project_7
         {
             Console.WriteLine("======================================");
             Console.WriteLine("Equipements : \n");
-            foreach (ItemBase item in Inventory.Equipements)
+            foreach (ItemBase item in Inventory._Equipements)
             {
                 if (item != null)
                 {
@@ -27,12 +27,12 @@ namespace Project_7
             }
             Console.WriteLine("======================================");
             Console.WriteLine("\nItems in backpack : \n");
-            foreach (ItemBase item in Inventory.Backpack)
+            foreach (ItemBase item in Inventory._Backpack)
             {
                 Console.WriteLine(item.Name);
                 Console.WriteLine(item.Description);
             }
         }
     }
-}
+}*/
 
