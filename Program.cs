@@ -8,7 +8,7 @@ namespace Project_7
         static void Main(string[] args)
         {
 
-            StartMenu menu = new StartMenu();
+            /*StartMenu menu = new StartMenu();
             
 
             if(menu.StartBool == true)
@@ -41,7 +41,7 @@ namespace Project_7
                     ConsoleKey input = player.keypressed(_map);
                     _map.show(player._Playerpos, input);
                 }
-            }
+            }*/
                    
             Battle battle = new Battle();
             battle.BattleScene();
