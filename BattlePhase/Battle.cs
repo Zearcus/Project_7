@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.FileIO;
+using Project_7;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Project_7
     public class Battle
     {
         public static List<Actions> Actions;
-        public static List<Skills> SkillList;
+        public static List<SkillsActions> SkillList;
         Player p = new Player();
         Enemies e = new Enemies();
         public Random RNG = new Random();
@@ -27,8 +28,8 @@ namespace Project_7
             Actions = new List<Actions>
             {
                 new Actions("Attack", ()=>Attack()),
-                new Actions("Skills", ()=>Attack()),
-                new Actions("Items", ()=>UseItems()),
+                new Actions("Skills", ()=>Skillscene()),
+                new Actions("Items", ()=>Potion()),
             };
 
             WriteMenu(Actions, Actions[index]);
@@ -62,7 +63,7 @@ namespace Project_7
             }
             while (keyInfo.Key != ConsoleKey.X);
 
-            Console.ReadKey();
+            BattleScene();
 
         }
 
@@ -76,19 +77,70 @@ namespace Project_7
             System.Threading.Thread.Sleep(1000);
             WriteMenu(Actions, Actions[index]);
             TakeTurn();
+            Victory();
             
         }
 
-        public void Skills () 
+        public void Skillscene () 
         {
-            
+
+            SkillList = new List<SkillsActions>
+            {
+                new SkillsActions("Heavy Slash", ()=>SkillsInit.SkillList["Heavy Slash"].HeavySlash(10,5,e,p)),
+            };
+
+            WriteSkills(SkillList, SkillList[index = 0]);
+
+            ConsoleKeyInfo keyInfo;
+            do
+            {
+                keyInfo = Console.ReadKey();
+
+                if (keyInfo.Key == ConsoleKey.S)
+                {
+                    if (index + 1 < SkillList.Count)
+                    {
+                        index++;
+                        WriteSkills(SkillList, SkillList[index]);
+                    }
+                }
+                if (keyInfo.Key == ConsoleKey.Z)
+                {
+                    if (index - 1 >= 0)
+                    {
+                        index--;
+                        WriteSkills(SkillList, SkillList[index]);
+                    }
+                }
+                if (keyInfo.Key == ConsoleKey.Enter)
+                {
+                    SkillList[index].Selected.Invoke();
+                    index = 0;
+                }
+            }
+            while (keyInfo.Key != ConsoleKey.X);
+
+            BattleScene();
+
         }
 
-        public void UseItems ()
+        public void Potion ()
         {
-            ConsumablesInit.ConsumablesList["Potion"].Heal(10,p);
-            System.Threading.Thread.Sleep(1000);
-            WriteMenu(Actions, Actions[index]);
+            int Pot = 3;
+            
+            if (Pot > 0)
+            {
+                Pot -= 1;
+                ConsumablesInit.ConsumablesList["Potion"].Heal(15, p);
+                Console.WriteLine("You Still have " + Pot + " Potions.");
+                System.Threading.Thread.Sleep(1000);
+                WriteMenu(Actions, Actions[index]);
+            }
+            else
+            {
+                Console.WriteLine("You don't have anymore potions");
+            }
+
         }
         public void TakeTurn ()
         {
@@ -112,17 +164,18 @@ namespace Project_7
             if (e.CurrentHp == 0)
             {
                 Console.WriteLine("You won the battle !");
-                Console.WriteLine("You won " + e.Exp + " !");
+                Console.WriteLine("You won " + e.Exp + " exp !");
 
                 if (p.Exp >= p.LVL2)
                 {
                     Console.WriteLine("You leveled up !");
-                    Console.WriteLine("Strengt + 1");
+                    Console.WriteLine("Strengt + 1"); p.Strenght += 1;
+                    Console.WriteLine("Hp + 3"); p.MaxHp += 3;
                 }
             }
         }
 
-        void WriteMenu(List<Actions> actions, Actions selectedOption)
+        public void WriteMenu(List<Actions> actions, Actions selectedOption)
         {
            
             Console.Clear();
@@ -148,13 +201,13 @@ namespace Project_7
             }
         }
 
-        /*void WriteSkills(List<Skills> skilllist, Actions selected)
+        public void WriteSkills(List<SkillsActions> skills, SkillsActions selected)
         {
             Console.Clear();
 
             Console.WriteLine("======================================");
             Console.WriteLine("                  Skills");
-            foreach (Skills skill in skilllist)
+            foreach (SkillsActions skill in skills)
             {
                 if (skill == selected)
                 {
@@ -167,6 +220,6 @@ namespace Project_7
 
                 Console.WriteLine(skill.Name);
             }
-        }*/
+        }
     }
 }

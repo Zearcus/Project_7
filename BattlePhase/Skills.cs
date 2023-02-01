@@ -17,9 +17,13 @@ namespace Project_7
             _MpCost = cost;
         }
 
-        public void Skill(int dmg, int cost)
+        public void HeavySlash(int dmg, int cost, Enemies e, Player p)
         {
-
+            e.CurrentHp -= dmg;
+            Console.WriteLine("You dealt " + e.CurrentHp);
+            p.CurrentMp -= cost;
+            Console.WriteLine(p.CurrentMp);
+            System.Threading.Thread.Sleep(1000);
         }
     }
 }

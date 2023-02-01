@@ -8,7 +8,8 @@ namespace Project_7
 {
     public class Consumables
     {
-        int _heal { get; set; }
+        public int _heal { get; set; }
+        public int _left { get; set; }
 
         public Consumables(int Healing) 
         { 
