@@ -10,7 +10,7 @@ namespace Project_7
     {
         public ConsoleKey PauseKey;
         public bool OpenClosePause = false;
-        InventoryMenu inventory = new InventoryMenu();
+        //InventoryMenu inventory = new InventoryMenu();
 
         public void ShowPause()
         {
@@ -42,7 +42,7 @@ namespace Project_7
             if (PauseKey == ConsoleKey.I && OpenClosePause == false)
             {
                 Console.Clear();
-                inventory.ShowMenu();
+                //inventory.ShowMenu();
 
                 if (PauseKey == ConsoleKey.I && OpenClosePause == true)
                 {

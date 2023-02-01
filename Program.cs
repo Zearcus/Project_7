@@ -8,7 +8,7 @@ namespace Project_7
         static void Main(string[] args)
         {
 
-            /*StartMenu menu = new StartMenu();
+            StartMenu menu = new StartMenu();
             
 
             if(menu.StartBool == true)
@@ -26,7 +26,7 @@ namespace Project_7
                 player.Init();
                 while (true)
                 {
-<<<<<<< Updated upstream
+
                     
                     if(pause.OpenClosePause == false)
                     {
@@ -36,14 +36,9 @@ namespace Project_7
                     _map.show(player._Playerpos, input);
                 }
             }
-=======
-                    _map.show(player._Playerpos);
-                    player.keypressed();
-                } while (true);
-            }*/
             Battle battle = new Battle();
             battle.BattleScene();
->>>>>>> Stashed changes
+
 
         }
     }
