@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*namespace Project_7
+namespace Project_7
 {
     internal class PauseMenu
     {
@@ -60,4 +60,4 @@ using System.Threading.Tasks;
 
         }
     }
-}*/
+}

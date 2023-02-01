@@ -42,8 +42,7 @@ namespace Project_7
                     _map.show(player._Playerpos, input);
                 }
             }
-                    
-            }*/
+                   
             Battle battle = new Battle();
             battle.BattleScene();
 
