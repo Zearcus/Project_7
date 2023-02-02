@@ -25,7 +25,7 @@ namespace Project_7
 
                 
                 PauseMenu pause = new PauseMenu();
-                Battle battle = new Battle();
+                
 
                 _map.Init();
                 player.Init();
@@ -35,7 +35,7 @@ namespace Project_7
                     if(pause.OpenClosePause == false)
                     {
                         pause.PauseKeyCode(_map, player._Playerpos);
-                        pause.ShowPause();
+                        
                         while (pause.OpenClosePause == true)
                         {
                             pause.ShowPause();
@@ -46,11 +46,12 @@ namespace Project_7
                     _map.show(player._Playerpos, input);
                     while (player.battle == true)
                     {
-                        Console.WriteLine("kjhdjkfksdjflikdjilfjsdlikgjjkfdgfjkdjgkjdfjkgjjkdfgkjhdf");
+                        // Console.WriteLine("kjhdjkfksdjflikdjilfjsdlikgjjkfdgfjkdjgkjdfjkgjjkdfgkjhdf");
+                        Battle battle = new Battle();
+                        battle.BattleScene();
                     }
+
                 }
-                
-                //battle.BattleScene();
             }
                    
 

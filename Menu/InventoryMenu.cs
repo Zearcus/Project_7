@@ -29,7 +29,7 @@ namespace Project_7
             Console.WriteLine("\nItems in backpack : \n");
             //foreach (ItemBase item in Inventory.Backpack)
             //{
-            //    Console.WriteLine(item.Name);
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++²&²  &   Console.WriteLine(item.Name);
             //    Console.WriteLine(item.Description);
             //}
             OpenCloseInventory= true;
