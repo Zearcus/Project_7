@@ -10,14 +10,13 @@ namespace Project_7
 {
     public class InventoryMenu
     {
-        public ConsoleKey InventoryKey;
-        //bool InventoryFunction = false;
-        public bool OpenCloseInventory = false;
 
         public InventoryMenu()
         {
             //InventoryKeyCode();
         }
+
+        public bool OpenCloseInventory = false;
 
         public void ShowMenu()
         {
@@ -30,10 +29,10 @@ namespace Project_7
             Console.WriteLine("\nItems in backpack : \n");
             //foreach (ItemBase item in Inventory.Backpack)
             //{
-            //    Console.WriteLine(item.Name);
+            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++²&²  &   Console.WriteLine(item.Name);
             //    Console.WriteLine(item.Description);
             //}
-            OpenCloseInventory = true;
+            OpenCloseInventory= true;
         }
 
         public void InventoryKeyCode()

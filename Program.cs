@@ -13,7 +13,7 @@ namespace Project_7
 
             if (menu.StartBool == true)
             {
-                Console.WriteLine("Welcome dear traveller");
+                Console.WriteLine("=================================Welcome dear traveller=================================");
                 Console.WriteLine("Press Escape to open the menu");
                 Console.WriteLine("Press Space to open the game");
 
@@ -25,13 +25,23 @@ namespace Project_7
 
 
                 PauseMenu pause = new PauseMenu();
-                Battle battle = new Battle();
+                
 
                 _map.Init();
                 player.Init();
                 npc.Init();
                 while (true)
                 {
+                    // if(pause.OpenClosePause == false)
+                    // {
+                    //     pause.PauseKeyCode(_map, player._Playerpos);
+                        
+                    //     while (pause.OpenClosePause == true)
+                    //     {
+                    //         pause.ShowPause();
+                    //         pause.PauseKeyCode(_map,player._Playerpos);
+                    //     }
+                    // }
                     ConsoleKey input = player.keypressed(_map, npc, npc.NPCpos);
                     _map.show(player._Playerpos, input);
                     if (pause.OpenClosePause == false)
@@ -46,8 +56,11 @@ namespace Project_7
                     }
                     while (player.battle == true)
                     {
-                        Console.WriteLine("kjhdjkfksdjflikdjilfjsdlikgjjkfdgfjkdjgkjdfjkgjjkdfgkjhdf");
+                        // Console.WriteLine("kjhdjkfksdjflikdjilfjsdlikgjjkfdgfjkdjgkjdfjkgjjkdfgkjhdf");
+                        Battle battle = new Battle();
+                        battle.BattleScene();
                     }
+
                 }
 
                 //battle.BattleScene();
