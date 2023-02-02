@@ -15,29 +15,31 @@ namespace Project_7
             {
                 Console.WriteLine("Welcome dear traveller");
                 Console.WriteLine("Press Escape to open the menu");
+                Console.WriteLine("Press Space to open the game");
                 
                 
                 GameMap _map = new GameMap();
                 Player player = new Player();
-                Quadrillator quadrillator = new Quadrillator();
                 NPC npc = new NPC();
                
 
-                //Console.WriteLine("Press E to open the inventory");
                 
                 PauseMenu pause = new PauseMenu();
-                //Quadrillator quadrillator = new Quadrillator();
+                Battle battle = new Battle();
 
                 _map.Init();
                 player.Init();
                 npc.Init();
                 while (true)
                 {
-
-                    
                     if(pause.OpenClosePause == false)
                     {
-                        pause.PauseKeyCode();
+                        pause.PauseKeyCode(_map, player._Playerpos);
+                        while (pause.OpenClosePause == true)
+                        {
+                            pause.ShowPause();
+                            pause.PauseKeyCode(_map,player._Playerpos);
+                        }
                     }
                     ConsoleKey input = player.keypressed(_map, npc, npc.NPCpos);
                     _map.show(player._Playerpos, input);
@@ -46,9 +48,10 @@ namespace Project_7
                         Console.WriteLine("kjhdjkfksdjflikdjilfjsdlikgjjkfdgfjkdjgkjdfjkgjjkdfgkjhdf");
                     }
                 }
+                
+                //battle.BattleScene();
             }
-            Battle battle = new Battle();
-            battle.BattleScene();
+                   
 
 
         }

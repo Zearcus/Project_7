@@ -12,7 +12,7 @@ namespace Project_7
 
         public static Dictionary<string, Consumables> ConsumablesList { get => _ConsumablesList; }
 
-        public ConsumablesInit() 
+        static ConsumablesInit() 
         {
             _ConsumablesList = new Dictionary<string, Consumables>()
             {

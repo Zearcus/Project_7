@@ -9,19 +9,22 @@ namespace Project_7
     public abstract class Entities
     {
         //Entities variables part
-        public float CurrentHp { get; set; }
-        public float MaxHp { get; set; }
-        public float CurrentMp { get; set; }
-        public float MaxMp { get; set; }
+        public int CurrentHp { get; set; }
+        public int MaxHp { get; set; }
+        public int CurrentMp { get; set; }
+        public int MaxMp { get; set; }
         public int Strenght { get; set; }
         public int Speed { get; set; }
         public int Level { get; set; }
-        public float Exp { get; set; }
+        public int Exp { get; set; }
         public char Token { get; set; }
         public int PosX { get; set; }
         public int PosY { get; set; }
 
-        public bool IsDead;
+        public int LVL2 = 50;
+        public int LVL3 = 120;
+        public int LVL4 = 260;
+
     }
 
 }
