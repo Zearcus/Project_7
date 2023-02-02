@@ -13,6 +13,7 @@ namespace Project_7
         public int MaxHp { get; set; }
         public int CurrentMp { get; set; }
         public int MaxMp { get; set; }
+        public int Armor { get; set; }
         public int Strenght { get; set; }
         public int Speed { get; set; }
         public int Level { get; set; }

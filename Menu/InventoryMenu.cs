@@ -23,16 +23,15 @@ namespace Project_7
             Console.WriteLine("======================================");
             Console.WriteLine("Equipements : \n");
 
-            Console.WriteLine(WeaponInit.WeaponsList["Glaive"]._dmg) ;
+            Console.WriteLine("Glaive " + WeaponInit.WeaponsList["Glaive"]._dmg + "STR") ;
+            Console.WriteLine("Sword " + WeaponInit.WeaponsList["Sword"]._dmg + "STR");
 
             Console.WriteLine("======================================");
             Console.WriteLine("\nItems in backpack : \n");
-            //foreach (ItemBase item in Inventory.Backpack)
-            //{
-            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++²&²  &   Console.WriteLine(item.Name);
-            //    Console.WriteLine(item.Description);
-            //}
-            OpenCloseInventory= true;
+
+            Console.WriteLine("Potion heals you for " + ConsumablesInit.ConsumablesList["Potion"]._heal + " there is still " + ConsumablesInit.ConsumablesList["Potion"]._left + "Potion");
+            OpenCloseInventory = true;
+
         }
 
         public void InventoryKeyCode()
