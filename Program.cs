@@ -15,6 +15,7 @@ namespace Project_7
             {
                 Console.WriteLine("Welcome dear traveller");
                 Console.WriteLine("Press Escape to open the menu");
+                Console.WriteLine("Press Space to open the game");
                 
                 
                 GameMap _map = new GameMap();
