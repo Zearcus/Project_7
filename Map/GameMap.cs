@@ -49,6 +49,7 @@ namespace Project_7
             x = 0;
         }
 
+
         public void show(int[] _Playerpos, ConsoleKey input)
         {
             Console.SetCursorPosition(0, 0);
@@ -124,6 +125,10 @@ namespace Project_7
                         case 'W':
                             Console.BackgroundColor = ConsoleColor.Green;
                             Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                        case 'C':
+                            Console.BackgroundColor = ConsoleColor.Cyan;
+                            Console.ForegroundColor = ConsoleColor.Cyan;
                             break;
                         default:
                             break;

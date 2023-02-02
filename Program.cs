@@ -39,8 +39,12 @@ namespace Project_7
                     {
                         pause.PauseKeyCode();
                     }
-                    ConsoleKey input = player.keypressed(_map);
+                    ConsoleKey input = player.keypressed(_map, npc, npc.NPCpos);
                     _map.show(player._Playerpos, input);
+                    while (player.battle == true)
+                    {
+                        Console.WriteLine("kjhdjkfksdjflikdjilfjsdlikgjjkfdgfjkdjgkjdfjkgjjkdfgkjhdf");
+                    }
                 }
             }
             Battle battle = new Battle();

@@ -9,7 +9,6 @@ namespace Project_7
     public abstract class NPCState
     {
         public string Name { get; set; }
-        public string texte { get; set; }
         public int[] NPCpos { get; set; }
 
     }

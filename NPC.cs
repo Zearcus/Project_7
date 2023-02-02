@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_7
 {
-    internal class NPC : NPCState
+    public class NPC : NPCState
     {
         public void Init()
         {
@@ -17,7 +17,6 @@ namespace Project_7
         public void TestNPC()
         {
             Name = "pablo";
-            texte = "welcome to the new world you have to level up and kill the boss the quadrillator";
         }
     }
 }
