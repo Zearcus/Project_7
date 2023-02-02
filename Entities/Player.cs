@@ -46,7 +46,7 @@ namespace Project_7
                             {
                                 Random test = new Random();
                                 int jsp = test.Next(0, 100);
-                                if (jsp <= 50)
+                                if (jsp <= 25)
                                 {
                                     bush = 0;
                                 }
@@ -69,6 +69,24 @@ namespace Project_7
                     if (map.GetMap()[_Playerpos[0], _Playerpos[1] + 1] != 'X')
                     {
                         _Playerpos[1]++;
+                        if (map.GetMap()[_Playerpos[0], _Playerpos[1]] == 'W')
+                        {
+                            int bush = 1;
+                            if (bush == 1)
+                            {
+                                Random test = new Random();
+                                int jsp = test.Next(0, 100);
+                                if (jsp <= 25)
+                                {
+                                    bush = 0;
+                                }
+                            }
+                            if (bush == 0)
+                            {
+                                Console.Clear();
+                                battle = true;
+                            }
+                        }
                     }
                     if (_Playerpos[0] == NPCpos[0] && _Playerpos[1] == NPCpos[1])
                     {
@@ -81,6 +99,24 @@ namespace Project_7
                     if (map.GetMap()[_Playerpos[0] + 1, _Playerpos[1]] != 'X')
                     {
                         _Playerpos[0]++;
+                        if (map.GetMap()[_Playerpos[0], _Playerpos[1]] == 'W')
+                        {
+                            int bush = 1;
+                            if (bush == 1)
+                            {
+                                Random test = new Random();
+                                int jsp = test.Next(0, 100);
+                                if (jsp <= 25)
+                                {
+                                    bush = 0;
+                                }
+                            }
+                            if (bush == 0)
+                            {
+                                Console.Clear();
+                                battle = true;
+                            }
+                        }
                     }
                     if (_Playerpos[0] == NPCpos[0] && _Playerpos[1] == NPCpos[1])
                     {
@@ -93,6 +129,24 @@ namespace Project_7
                     if (map.GetMap()[_Playerpos[0] - 1, _Playerpos[1]] != 'X')
                     {
                         _Playerpos[0]--;
+                        if (map.GetMap()[_Playerpos[0], _Playerpos[1]] == 'W')
+                        {
+                            int bush = 1;
+                            if (bush == 1)
+                            {
+                                Random test = new Random();
+                                int jsp = test.Next(0, 100);
+                                if (jsp <= 25)
+                                {
+                                    bush = 0;
+                                }
+                            }
+                            if (bush == 0)
+                            {
+                                Console.Clear();
+                                battle = true;
+                            }
+                        }
                     }
                     if (_Playerpos[0] == NPCpos[0] && _Playerpos[1] == NPCpos[1])
                     {

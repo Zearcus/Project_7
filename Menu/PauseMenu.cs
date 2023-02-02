@@ -9,34 +9,34 @@ namespace Project_7
 {
     internal class PauseMenu
     {
-        public ConsoleKey PauseKey;
+        /*public ConsoleKey PauseKey;*/
         public bool OpenClosePause = false;
         InventoryMenu inventory = new InventoryMenu();
         public bool Verify = false;
 
-        public void ShowPause()
+        public void ShowPause(ConsoleKey input)
         {
             Console.Clear();
             Console.WriteLine("_Escape : Resume");
             Console.WriteLine("I : Inventory");
             Console.WriteLine("O : Save");
             Console.WriteLine("P : Quit");
-            
+
         }
-        public void PauseKeyCode(GameMap _map, int[] _Playerpos)
+        public void PauseKeyCode(GameMap _map, int[] _Playerpos, ConsoleKey input)
         {
             //PauseKey = Console.ReadKey().Key;
-            ConsoleKeyInfo PauseKey;
-            PauseKey = Console.ReadKey();
+            /*ConsoleKeyInfo PauseKey;
+            PauseKey = Console.ReadKey();*/
 
             // Open and Close Pause menu
-            if (PauseKey.Key == ConsoleKey.Escape && OpenClosePause == false)
+            if (input == ConsoleKey.Escape && OpenClosePause == false)
             {
                 Console.Clear();
                 OpenClosePause = true;
 
             }
-            else if (PauseKey.Key == ConsoleKey.Escape && OpenClosePause == true)
+            else if (input == ConsoleKey.Escape && OpenClosePause == true)
             {
                 OpenClosePause = false;
                 Console.Clear();
@@ -44,12 +44,12 @@ namespace Project_7
             }
 
             //Open and Close Inventory menu
-            if (PauseKey.Key == ConsoleKey.I && OpenClosePause == false)
+            if (input == ConsoleKey.I && OpenClosePause == false)
             {
                 Console.Clear();
                 inventory.ShowMenu();
 
-                if (PauseKey.Key == ConsoleKey.I && OpenClosePause == true)
+                if (input == ConsoleKey.I && OpenClosePause == true)
                 {
                     OpenClosePause = false;
                 }
@@ -58,7 +58,7 @@ namespace Project_7
             //Open and Close Save menu
 
             //Quit the game
-            if (PauseKey.Key == ConsoleKey.P)
+            if (input == ConsoleKey.P)
             {
                 Environment.Exit(0);
             }
