@@ -13,7 +13,7 @@ namespace Project_7
 
             if(menu.StartBool == true)
             {
-                Console.WriteLine("Welcome dear traveller");
+                Console.WriteLine("=================================Welcome dear traveller=================================");
                 Console.WriteLine("Press Escape to open the menu");
                 Console.WriteLine("Press Space to open the game");
                 
@@ -35,6 +35,7 @@ namespace Project_7
                     if(pause.OpenClosePause == false)
                     {
                         pause.PauseKeyCode(_map, player._Playerpos);
+                        pause.ShowPause();
                         while (pause.OpenClosePause == true)
                         {
                             pause.ShowPause();

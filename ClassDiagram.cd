@@ -3,29 +3,29 @@
   <Class Name="Project_7.Entities" Collapsed="true">
     <Position X="0.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities.cs</FileName>
+      <HashCode>AAACFhACAAAAAAAAAIEAwAABAAAAAAQBAAAAAAABAAA=</HashCode>
+      <FileName>Entities\Entities.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project_7.GameMap" Collapsed="true">
     <Position X="3.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameMap.cs</FileName>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAgAAAABAAGAAAAQAA=</HashCode>
+      <FileName>Map\GameMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project_7.Items" Collapsed="true">
     <Position X="7" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items.cs</FileName>
+      <HashCode>AAAAAAAAAAAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Items.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project_7.Player" Collapsed="true">
     <Position X="0.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Player.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAACAABAAAA=</HashCode>
+      <FileName>Entities\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project_7.Program" Collapsed="true">
@@ -35,25 +35,11 @@
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Project_7.potion" Collapsed="true">
-    <Position X="6" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>potion.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Project_7.Weapons" Collapsed="true">
     <Position X="7.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Weapons.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Project_7.Armors" Collapsed="true">
-    <Position X="9.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Armors.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
