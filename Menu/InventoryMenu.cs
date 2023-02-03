@@ -28,36 +28,6 @@ namespace Project_7
             OpenCloseInventory = true;
 
         }
-
-        public void InventoryKeyCode()
-        {
-            //switch (InventoryKey)
-            //{
-            //    case ConsoleKey.E:
-
-            //        if (OpenCloseInventory == false)
-            //        {
-            //            ShowMenu();
-            //        }
-            //        else if (OpenCloseInventory == true)
-            //        {
-
-            //        }
-            //        break;
-            //}
-
-
-            //if (InventoryKey == ConsoleKey.E && OpenCloseInventory == false)
-            //{
-            //    Console.Clear();
-            //    ShowMenu();
-
-            //    if (InventoryKey == ConsoleKey.Escape && OpenCloseInventory == true)
-            //    {
-            //        OpenCloseInventory = false;
-            //    }
-            //}
-        }
     }
 }
 
