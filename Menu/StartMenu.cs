@@ -16,9 +16,11 @@ namespace Project_7
 
         public void ShowMenu()
         {
-            Console.WriteLine("=======================Welcome Traveller to Elden Square !=======================");
-            Console.WriteLine("1) : Start");
-            Console.WriteLine("2) : Quit ");
+            Console.WriteLine("======================= Welcome Traveller to Elden Square ! =======================");
+            Console.WriteLine();
+            Console.WriteLine("                                   1) : Start");
+            Console.WriteLine("                                   2) : Quit ");
+            Console.WriteLine();
             Console.WriteLine("=================================================================================\n");
 
             ConsoleKey choice;
