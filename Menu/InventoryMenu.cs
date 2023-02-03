@@ -8,22 +8,17 @@ using System.Threading.Tasks;
 
 namespace Project_7
 {
-    public class InventoryMenu
+    internal class InventoryMenu
     {
-
-        public InventoryMenu()
-        {
-            //InventoryKeyCode();
-        }
-
         public bool OpenCloseInventory = false;
 
-        public void ShowMenu()
+        public void ShowInventory()
         {
+            Console.Clear();
             Console.WriteLine("======================================");
             Console.WriteLine("Equipements : \n");
 
-            Console.WriteLine(WeaponInit.WeaponsList["Glaive"]._dmg) ;
+            Console.WriteLine(WeaponInit.WeaponsList["Glaive"]._dmg);
 
             Console.WriteLine("======================================");
             Console.WriteLine("\nItems in backpack : \n");
@@ -32,37 +27,7 @@ namespace Project_7
             // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++²&²  &   Console.WriteLine(item.Name);
             //    Console.WriteLine(item.Description);
             //}
-            OpenCloseInventory= true;
-        }
-
-        public void InventoryKeyCode()
-        {
-            //switch (InventoryKey)
-            //{
-            //    case ConsoleKey.E:
-
-            //        if (OpenCloseInventory == false)
-            //        {
-            //            ShowMenu();
-            //        }
-            //        else if (OpenCloseInventory == true)
-            //        {
-
-            //        }
-            //        break;
-            //}
-
-
-            //if (InventoryKey == ConsoleKey.E && OpenCloseInventory == false)
-            //{
-            //    Console.Clear();
-            //    ShowMenu();
-
-            //    if (InventoryKey == ConsoleKey.Escape && OpenCloseInventory == true)
-            //    {
-            //        OpenCloseInventory = false;
-            //    }
-            //}
+            
         }
     }
 }

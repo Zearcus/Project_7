@@ -9,60 +9,51 @@ namespace Project_7
 {
     internal class PauseMenu
     {
-        /*public ConsoleKey PauseKey;*/
         public bool OpenClosePause = false;
         InventoryMenu inventory = new InventoryMenu();
-        public bool Verify = false;
 
-        public void ShowPause(ConsoleKey input)
+        public void ShowPause()
         {
             Console.Clear();
-            Console.WriteLine("_Escape : Resume");
-            Console.WriteLine("I : Inventory");
-            Console.WriteLine("O : Save");
-            Console.WriteLine("P : Quit");
-
+            Console.WriteLine("1) Resume");
+            Console.WriteLine("2) Inventory");
+            Console.WriteLine("3) Save");
+            Console.WriteLine("4) Quit the game");
         }
-        public void PauseKeyCode(GameMap _map, int[] _Playerpos, ConsoleKey input)
+
+        public void PauseClose(GameMap _map, int[] _Playerpos, ConsoleKey input)
         {
-            //PauseKey = Console.ReadKey().Key;
-            /*ConsoleKeyInfo PauseKey;
-            PauseKey = Console.ReadKey();*/
-
-            // Open and Close Pause menu
-            if (input == ConsoleKey.Escape && OpenClosePause == false)
+            if (input == ConsoleKey.D1)
             {
-                Console.Clear();
-                OpenClosePause = true;
-
-            }
-            else if (input == ConsoleKey.Escape && OpenClosePause == true)
-            {
+                _map.show(_Playerpos, input);
                 OpenClosePause = false;
-                Console.Clear();
-                _map.show(_Playerpos,ConsoleKey.A);
             }
+        }
 
-            //Open and Close Inventory menu
-            if (input == ConsoleKey.I && OpenClosePause == false)
+        public void InventoryOpenClose(ConsoleKey input)
+        {
+            if (input == ConsoleKey.D2)
             {
-                Console.Clear();
-                inventory.ShowMenu();
-
-                if (input == ConsoleKey.I && OpenClosePause == true)
+                while (inventory.OpenCloseInventory == false)
                 {
-                    OpenClosePause = false;
+                    inventory.ShowInventory();
+                    input = Console.ReadKey().Key;
+                    if (input == ConsoleKey.D2 && inventory.OpenCloseInventory == false)
+                    {
+                        inventory.OpenCloseInventory = true;
+                        ShowPause();
+                    }
                 }
+                inventory.OpenCloseInventory = false;
             }
+        }
 
-            //Open and Close Save menu
-
-            //Quit the game
-            if (input == ConsoleKey.P)
+        public void QuitOpenClose(ConsoleKey input)
+        {
+            if(input == ConsoleKey.D4)
             {
                 Environment.Exit(0);
             }
-
         }
     }
 }
