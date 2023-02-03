@@ -15,10 +15,10 @@ namespace Project_7
         public static List<Actions> Actions;
         public static List<SkillsActions> SkillList;
         Player p = new Player();
-        Enemies e = new Enemies();
+        Enemies e = new Enemies("Quadrillator");
         public Random RNG = new Random();
         public int index = 0;
-        public int Pot = 3;
+        int Pot = 3;
         public Battle() 
         {
             
@@ -30,10 +30,10 @@ namespace Project_7
             {
                 new Actions("Attack", ()=>Attack()),
                 new Actions("Skills", ()=>Skillscene()),
-                new Actions("Items", ()=>Potion()),
+                new Actions("Potion", ()=>Potion()),
             };
 
-            WriteMenu(Actions, Actions[index]);
+            WriteBattleMenu(Actions, Actions[index]);
 
             ConsoleKeyInfo keyInfo;
             do
@@ -45,7 +45,7 @@ namespace Project_7
                     if (index + 1 < Actions.Count) 
                     {
                         index++;
-                        WriteMenu(Actions, Actions[index]);
+                        WriteBattleMenu(Actions, Actions[index]);
                     }
                 }
                 if (keyInfo.Key == ConsoleKey.Z)
@@ -53,7 +53,7 @@ namespace Project_7
                     if (index - 1 >= 0)
                     {
                         index--;
-                        WriteMenu(Actions, Actions[index]);
+                        WriteBattleMenu(Actions, Actions[index]);
                     }
                 }
                 if (keyInfo.Key == ConsoleKey.Enter) 
@@ -64,19 +64,19 @@ namespace Project_7
             }
             while (keyInfo.Key != ConsoleKey.X);
 
+            System.Threading.Thread.Sleep(1000);
             BattleScene();
 
         }
-
 
         public void Attack ()
         {
             int _RNG = RNG.Next(p.Strenght, p.Strenght + 3);
 
-            e.CurrentHp -= _RNG;
+            e.CurrentHp  -= (_RNG -= (e.Armor / 2));
             Console.WriteLine("You dealt " + _RNG + " to the enemy.");
             System.Threading.Thread.Sleep(1000);
-            WriteMenu(Actions, Actions[index]);
+            WriteBattleMenu(Actions, Actions[index]);
             TakeTurn();
             Victory();
             
@@ -113,15 +113,13 @@ namespace Project_7
                         WriteSkills(SkillList, SkillList[index]);
                     }
                 }
-                if (keyInfo.Key == ConsoleKey.Enter)
-                {
-                    SkillList[index].Selected.Invoke();
-                    index = 0;
-                    WriteMenu(Actions, Actions[index]);
-                }
             }
-            while (keyInfo.Key != ConsoleKey.X);
+            while (keyInfo.Key != ConsoleKey.Enter);
 
+            SkillList[index].Selected.Invoke();
+            index = 0;
+            TakeTurn();
+            Victory();
             BattleScene();
 
         }
@@ -132,15 +130,17 @@ namespace Project_7
             if (Pot > 0)
             {
                 Pot -= 1;
-                ConsumablesInit.ConsumablesList["Potion"].Heal(15, p);
+                ConsumablesInit.ConsumablesList["Potion"].Heal(15,3,p);
                 Console.WriteLine("You Still have " + Pot + " Potions.");
                 System.Threading.Thread.Sleep(1000);
-                WriteMenu(Actions, Actions[index]);
+                TakeTurn();
+                System.Threading.Thread.Sleep(1000);
+                WriteBattleMenu(Actions, Actions[index]);
             }
             else
             {
                 Console.WriteLine("You don't have anymore potions");
-                WriteMenu(Actions, Actions[index]);
+                WriteBattleMenu(Actions, Actions[index]);
             }
 
         }
@@ -154,10 +154,10 @@ namespace Project_7
             }
             else if (e.CurrentHp > 0)
             {
-                p.CurrentHp -= _RNGE;
+                p.CurrentHp -= (_RNGE -= (p.Armor / 2));
                 Console.WriteLine("The enemy dealt " + _RNGE + " to you.");
                 System.Threading.Thread.Sleep(1000);
-                WriteMenu(Actions, Actions[index]);
+                WriteBattleMenu(Actions, Actions[index]);
             }
         }
 
@@ -167,24 +167,42 @@ namespace Project_7
             {
                 Console.WriteLine("You won the battle !");
                 Console.WriteLine("You won " + e.Exp + " exp !");
+                System.Threading.Thread.Sleep(1000);
 
                 if (p.Exp >= p.LVL2)
                 {
                     Console.WriteLine("You leveled up !");
-                    Console.WriteLine("Strengt + 1"); p.Strenght += 1;
+                    System.Threading.Thread.Sleep(500);
+                    Console.WriteLine("Strenght + 1"); p.Strenght += 1;
+                    System.Threading.Thread.Sleep(500);
                     Console.WriteLine("Hp + 3"); p.MaxHp += 3;
+                    System.Threading.Thread.Sleep(500);
+                    Console.WriteLine("Armor + 1"); p.Armor += 1;
+                    System.Threading.Thread.Sleep(500);
+                    p.Exp = 0;
                 }
+                p.battle = false;
             }
+            else if (p.CurrentHp <= 0)
+            {
+                Console.WriteLine("You lost the battle !");
+                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine("Luckly a wanderer was passing by and saved you in-extremis.");
+                p.CurrentHp = p.MaxHp;
+                p.battle = false;
+            }
+            p.battle = false;
         }
 
-        public void WriteMenu(List<Actions> actions, Actions selectedOption)
+        public void WriteBattleMenu(List<Actions> actions, Actions selectedOption)
         {
            
             Console.Clear();
 
             Console.WriteLine("======================================");
-            Console.WriteLine("Player HP :" + p.CurrentHp + "         Enemy HP :" + e.CurrentHp);
-            Console.WriteLine("Player MP :" + p.CurrentMp + "         Enemy MP :" + e.CurrentMp);
+            Console.WriteLine("Player Name :" + "           Enemy Name : ");
+            Console.WriteLine("Player HP :" + p.CurrentHp + "/" + p.MaxHp + "      Enemy HP :" + e.CurrentHp + "/" + e.MaxHp );
+            Console.WriteLine("Player MP :" + p.CurrentMp + "/" + p.MaxMp + "      Enemy MP :" + e.CurrentMp + "/" + e.MaxMp);
             Console.WriteLine("LVL :" + p.Level + "                LVL :" + e.Level);
             Console.WriteLine("======================================");
 

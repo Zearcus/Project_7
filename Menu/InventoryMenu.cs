@@ -18,16 +18,45 @@ namespace Project_7
             Console.WriteLine("======================================");
             Console.WriteLine("Equipements : \n");
 
-            Console.WriteLine(WeaponInit.WeaponsList["Glaive"]._dmg);
+            Console.WriteLine("Glaive " + WeaponInit.WeaponsList["Glaive"]._dmg + "STR") ;
+            Console.WriteLine("Sword " + WeaponInit.WeaponsList["Sword"]._dmg + "STR");
 
             Console.WriteLine("======================================");
             Console.WriteLine("\nItems in backpack : \n");
-            //foreach (ItemBase item in Inventory.Backpack)
+
+            Console.WriteLine("Potion heals you for " + ConsumablesInit.ConsumablesList["Potion"]._heal + " there is still " + ConsumablesInit.ConsumablesList["Potion"]._left + "Potion");
+            OpenCloseInventory = true;
+
+        }
+
+        public void InventoryKeyCode()
+        {
+            //switch (InventoryKey)
             //{
-            // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++²&²  &   Console.WriteLine(item.Name);
-            //    Console.WriteLine(item.Description);
+            //    case ConsoleKey.E:
+
+            //        if (OpenCloseInventory == false)
+            //        {
+            //            ShowMenu();
+            //        }
+            //        else if (OpenCloseInventory == true)
+            //        {
+
+            //        }
+            //        break;
             //}
-            
+
+
+            //if (InventoryKey == ConsoleKey.E && OpenCloseInventory == false)
+            //{
+            //    Console.Clear();
+            //    ShowMenu();
+
+            //    if (InventoryKey == ConsoleKey.Escape && OpenCloseInventory == true)
+            //    {
+            //        OpenCloseInventory = false;
+            //    }
+            //}
         }
     }
 }

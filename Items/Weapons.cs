@@ -14,7 +14,5 @@ namespace Project_7
         {
             _dmg = dmg;
         }
-
-
     }
 }

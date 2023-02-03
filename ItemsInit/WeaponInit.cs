@@ -16,7 +16,7 @@ namespace Project_7
             _WeaponsList = new Dictionary<string, Weapons>()
             {
                 {"Glaive", new Weapons(10)},
-                {"Sword", new Weapons(10)}
+                {"Sword", new Weapons(5)}
             };
         }
     }

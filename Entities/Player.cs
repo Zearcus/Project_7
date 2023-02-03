@@ -7,10 +7,11 @@ namespace Project_7
     {
         public Player() 
         {
-            CurrentHp = 10;
+            CurrentHp = 20;
             MaxHp = 20;
             CurrentMp = 20;
             MaxMp = 20;
+            Armor = 5;
             Exp = 0;
             Speed = 5;
             Level = 1;
@@ -26,7 +27,7 @@ namespace Project_7
             _Playerpos[1] = 63;
 
         }
-        
+       
 
         public ConsoleKey keypressed(GameMap map, NPC npc, int[] NPCpos)
         {

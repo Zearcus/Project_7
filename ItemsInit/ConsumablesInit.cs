@@ -16,7 +16,7 @@ namespace Project_7
         {
             _ConsumablesList = new Dictionary<string, Consumables>()
             {
-                {"Potion", new Consumables(15)},
+                {"Potion", new Consumables(15,3)},
             };
         }
     }

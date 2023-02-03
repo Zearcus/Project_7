@@ -18,12 +18,19 @@ namespace Project_7
         }
 
         public void HeavySlash(int dmg, int cost, Enemies e, Player p)
-        {
-            e.CurrentHp -= dmg;
-            Console.WriteLine("You dealt " + e.CurrentHp);
+        { 
+            e.CurrentHp -= (p.Strenght += dmg / e.Armor);
+            Console.WriteLine("You dealt " + e.CurrentHp + " to the enemy.");
             p.CurrentMp -= cost;
-            Console.WriteLine(p.CurrentMp);
+            Console.WriteLine("You have " + p.CurrentMp + " mp left.");
             System.Threading.Thread.Sleep(1000);
+
+            if (p.CurrentMp <= 0) 
+            {
+                p.CurrentMp = 0;
+                Console.WriteLine("You don't have enough mp !");
+                System.Threading.Thread.Sleep(1000);
+            }
         }
     }
 }
