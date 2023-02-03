@@ -35,7 +35,7 @@ namespace Project_7
             _Map = new char[60, 240];
             int x = 0;
             int y = 0;
-            string[] lines = System.IO.File.ReadAllLines(@"../../../maptestV2.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"maptestV2.txt");
             foreach (string line in lines)
             {
                 x++;
@@ -146,7 +146,6 @@ namespace Project_7
                 }
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine();
             }
         }
     }

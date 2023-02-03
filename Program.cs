@@ -4,7 +4,6 @@ namespace Project_7
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
 
@@ -15,7 +14,7 @@ namespace Project_7
             {
                 Console.WriteLine("=================================Welcome dear traveller=================================");
                 Console.WriteLine("Press 1 to open the menu");
-                Console.WriteLine("Press Space to open the game");
+                Console.WriteLine("Press other button to open the game");
 
 
                 GameMap _map = new GameMap();
