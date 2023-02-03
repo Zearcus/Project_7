@@ -13,7 +13,7 @@ namespace Project_7
             if (menu.StartBool == true)
             {
                 
-                Console.WriteLine("Story");
+                Console.WriteLine("Story :");
                 Console.WriteLine("====================================================================================================================");
                 Console.WriteLine("you are a square-less who is trying to put an end to the cube order that has long reigned over the SQUARE region");
                 Console.WriteLine("====================================================================================================================");
